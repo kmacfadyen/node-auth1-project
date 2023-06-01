@@ -6,8 +6,13 @@
     "message": "You shall not pass!"
   }
 */
-function restricted() {
-
+async function restricted(req, res, next) {
+  if (req.session.user) {
+    next()
+  } 
+  else {
+    next({ status: 401, message: 'You shall not pass!'})
+  }
 }
 
 /*
@@ -18,8 +23,13 @@ function restricted() {
     "message": "Username taken"
   }
 */
-function checkUsernameFree() {
+async function checkUsernameFree() {
+  if () {
 
+  }
+  else {
+    next({ status: 422, message: "Username taken"})
+  }
 }
 
 /*
@@ -30,8 +40,13 @@ function checkUsernameFree() {
     "message": "Invalid credentials"
   }
 */
-function checkUsernameExists() {
+async function checkUsernameExists() {
+  if () {
 
+  }
+  else {
+    next({ status: 401, message: "Invalid credentials"})
+  }
 }
 
 /*
@@ -43,7 +58,18 @@ function checkUsernameExists() {
   }
 */
 function checkPasswordLength() {
+  if () {
 
+  }
+  else {
+    next({ status: 422, message: "Password must be longer than 3 chars"})
+  }
 }
 
 // Don't forget to add these to the `exports` object so they can be required in other modules
+module.exports = {
+  restricted,
+  checkUsernameFree,
+  checkUsernameExists,
+  checkPasswordLength,
+}
