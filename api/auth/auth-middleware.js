@@ -23,7 +23,7 @@ async function restricted(req, res, next) {
     "message": "Username taken"
   }
 */
-async function checkUsernameFree() {
+async function checkUsernameFree(req, res, next) {
   if () {
 
   }
@@ -40,7 +40,7 @@ async function checkUsernameFree() {
     "message": "Invalid credentials"
   }
 */
-async function checkUsernameExists() {
+async function checkUsernameExists(req, res, next) {
   if () {
 
   }
@@ -57,7 +57,7 @@ async function checkUsernameExists() {
     "message": "Password must be longer than 3 chars"
   }
 */
-function checkPasswordLength() {
+function checkPasswordLength(req, res, next) {
   if () {
 
   }
